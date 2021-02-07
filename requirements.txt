@@ -1,7 +1,4 @@
-random
 discord
-requests
 wikipedia
-json
 asyncio
 time
