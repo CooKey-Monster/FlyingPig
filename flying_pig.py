@@ -1,0 +1,19 @@
+import os
+from fp_reddit import Reddit
+from fp_math import Math
+from bot_settup import bot
+from fp_games import Games
+from fp_economy import Economy
+from fp_server_events import Events
+from fp_server_commands import Commands
+
+os.chdir("C:\\Programming\\FlyingPig")
+
+if __name__ == '__main__':
+    meme = Reddit()
+    math = Math()
+    games = Games()
+    economy = Economy()
+    events = Events()
+    commands = Commands()
+    bot.run("Nzk5Njc4NzY4MDY2NTkyNzk5.YAHE4w.lxNn94msroC3l4PjiNbRydp5j00")
