@@ -3,3 +3,4 @@ wikipedia
 asyncio
 praw
 numpy
+matplotlib
