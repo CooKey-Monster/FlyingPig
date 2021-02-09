@@ -110,6 +110,9 @@ class Economy:
         if user1 is None:
             await ctx.send("You need someone to steal from silly. Or am I just a genius?")
 
+        elif str(user1.id) == str(ctx.author.id):
+            await ctx.send(f"Why would anyone attack himself... Your one odd little human {user1.mention}.")
+
         else:
             await ctx.send(f"target: {user1.mention}")
             amount = random.randint(1, account[str(user1.id)]["wallet"])/2
