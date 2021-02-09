@@ -48,18 +48,18 @@ class Economy:
             f.close()
 
     @bot.command()
-    async def depo(ctx, amount):
+    async def depo(ctx, amount: int):
         global account
         wallet = account[str(ctx.author.id)]["wallet"]
         bank = account[str(ctx.author.id)]["bank"]
 
         # check if theirs money, if yes then do the transaction
-        if wallet < int(amount):
+        if wallet < amount:
             await ctx.send(f"Your don't have that much {ctx.author.mention}, get more money to deposit.")
 
         else:
-            account[str(ctx.author.id)]["wallet"] -= int(amount)
-            account[str(ctx.author.id)]["bank"] += int(amount)
+            account[str(ctx.author.id)]["wallet"] -= amount
+            account[str(ctx.author.id)]["bank"] += amount
             await ctx.send(f"Succesfuly deposited {amount} coins into {ctx.author.mention}'s bank. The probability of getting stolen is now even lower.")
 
             with open("main_bank.json","r+") as f:
@@ -76,18 +76,18 @@ class Economy:
         await ctx.send(embed = embed)
 
     @bot.command()
-    async def retrieve(ctx, amount):
+    async def retrieve(ctx, amount: int):
         global account
         wallet = account[str(ctx.author.id)]["wallet"]
         bank = account[str(ctx.author.id)]["bank"]
 
         # check if theirs money, if yes then do the transaction
-        if bank < int(amount):
+        if bank < amount:
             await ctx.send(f"Your don't have that much in your bank {ctx.author.mention}, get more money to retrieve.")
 
         else:
-            account[str(ctx.author.id)]["wallet"] += int(amount)
-            account[str(ctx.author.id)]["bank"] -= int(amount)
+            account[str(ctx.author.id)]["wallet"] += amount
+            account[str(ctx.author.id)]["bank"] -= amount
             await ctx.send(f"Succesfuly retrieved {amount} coins from {ctx.author.mention}'s bank.")
 
             with open("main_bank.json","r+") as f:
@@ -115,16 +115,16 @@ class Economy:
 
         else:
             await ctx.send(f"target: {user1.mention}")
-            amount = random.randint(1, account[str(user1.id)]["wallet"])/2
+            amount = int(random.randint(1, account[str(user1.id)]["wallet"])/2)
 
-            if amount - int(amount) != 0:
+            if amount - amount != 0:
                 amount += 0.5
 
             else:
                 pass
 
-            fee = amount/2
-            if fee - int(fee) != 0:
+            fee = int(amount/2)
+            if fee - fee != 0:
                 fee += 0.5
 
             else:
