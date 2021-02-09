@@ -38,7 +38,7 @@ class Economy:
     @commands.cooldown(3, 30, commands.BucketType.user)
     async def beg(ctx):
         global account
-        money = random.randrange(10, 101)
+        money = random.randrange(15, 101)
         await ctx.send(f"Sup {ctx.author.mention}, you got {money} coins")
 
         account[str(ctx.author.id)]["wallet"] += money
