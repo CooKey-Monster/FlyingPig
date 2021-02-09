@@ -76,6 +76,34 @@ class Economy:
         await ctx.send(embed = embed)
 
     @bot.command()
+    async def retrieve(ctx, amount):
+        global account
+        wallet = account[str(ctx.author.id)]["wallet"]
+        bank = account[str(ctx.author.id)]["bank"]
+
+        # check if theirs money, if yes then do the transaction
+        if bank < int(amount):
+            await ctx.send(f"Your don't have that much in your bank {ctx.author.mention}, get more money to retrieve.")
+
+        else:
+            account[str(ctx.author.id)]["wallet"] += int(amount)
+            account[str(ctx.author.id)]["bank"] -= int(amount)
+            await ctx.send(f"Succesfuly retrieved {amount} coins from {ctx.author.mention}'s bank.")
+
+            with open("main_bank.json","r+") as f:
+                json.dump(account, f, indent = 4)
+                f.close()
+
+        # renew wallet then print it
+        new_wallet = account[str(ctx.author.id)]["wallet"]
+        new_bank = account[str(ctx.author.id)]["bank"]
+        embed = discord.Embed(title = f"{ctx.author.display_name} Account Balance", color = discord.Color.green())
+        embed.add_field(name = "Wallet", value = f"{new_wallet} Coins", inline = False)
+        embed.add_field(name = "Bank", value = f"{new_bank} Coins", inline = False)
+        embed.add_field(name = "Net value", value = f"{new_wallet + new_bank} Coins", inline = False)
+        await ctx.send(embed = embed)
+
+    @bot.command()
     async def steal(ctx, user1: discord.Member = None):
         global account
 
