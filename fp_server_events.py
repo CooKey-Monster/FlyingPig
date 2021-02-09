@@ -81,3 +81,6 @@ class Events:
 
         elif isinstance(error, commands.CommandOnCooldown):
             await ctx.send(f"**{ctx.author.mention} Stop Begging You Moron. You can use this command 3 Times and the Cooldown Rate is 30 Seconds! Try again in {error.retry_after:.2f}s**")
+
+        else:
+            print(error)
