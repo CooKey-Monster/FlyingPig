@@ -166,7 +166,7 @@ class Economy:
                 f.close()
 
     @bot.command()
-    async def gift(ctx, user1: discord.Member = None, ammount):
+    async def gift(ammount, ctx, user1: discord.Member = None):
         global account
 
         if user1 is None:
