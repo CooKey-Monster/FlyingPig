@@ -10,7 +10,7 @@ from discord.ext.commands import has_permissions
 
 class Math:
     @bot.command()
-    async def pemdas(ctx, expression):
+    async def equation(ctx, expression):
         try:
             await ctx.send(calc(expression))
 
