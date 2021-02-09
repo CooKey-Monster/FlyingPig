@@ -192,4 +192,4 @@ class Economy:
                 json.dump(account, f, indent = 4)
                 f.close()
 
-            await ctx.send(f"How generous of you {ctx.author}, I will save a spot for you.")
+            await ctx.send(f"How generous of you {ctx.author.mention}, I will save a spot for you.")
