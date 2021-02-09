@@ -104,7 +104,7 @@ class Economy:
         await ctx.send(embed = embed)
 
     @bot.command()
-    async def steal(ctx, amount, user1: discord.Member = None):
+    async def steal(ctx, user1: discord.Member = None):
         global account
 
         if user1 is None:
@@ -166,7 +166,7 @@ class Economy:
                 f.close()
 
     @bot.command()
-    async def gift(ctx, user1: discord.Member = None, ammount):
+    async def gift(ctx, ammount, user1: discord.Member = None):
         global account
 
         if user1 is None:
@@ -192,4 +192,4 @@ class Economy:
                 json.dump(account, f, indent = 4)
                 f.close()
 
-            await ctx.send(f"How generous of you {ctx.author}, I will save a spot for you in heaven.")
+            await ctx.send(f"How generous of you {ctx.author}, I will save a spot for you.")
