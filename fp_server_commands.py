@@ -221,6 +221,7 @@ class Commands:
         embed = discord.Embed(title = "Help on economy commands on FlyingPig.", description = "My economy commands")
         embed.add_field(name = "!bal @user", value = "Shows balance of @user, default is self.", inline = False)
         embed.add_field(name = "!beg", value = "Beg the majestic pig to give u some coins, goes directly to your wallet.", inline = False)
+        embed.add_field(name = "!retrieve #amount", value = "Retrieve #amount from bank, to wallet.", inline = False)
         embed.add_field(name = "!depo #amount", value = "Deposits #amount into bank.", inline = False)  
         embed.add_field(name = "!steal @user", value = "Steal money from @user", inline = False)       
         await ctx.send(embed = embed)
