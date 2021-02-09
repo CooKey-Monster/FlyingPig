@@ -164,3 +164,32 @@ class Economy:
             with open("main_bank.json","r+") as f:
                 json.dump(account, f, indent = 4)
                 f.close()
+
+    @bot.command()
+    async def gift(ctx, user1: discord.Member = None, ammount):
+        global account
+
+        if user1 is None:
+            await ctx.send(f"You need someone to gift too {ctx.author}. Why you humans so dumb...")
+
+        elif str(user1.id) == str(ctx.author.id):
+            await ctx.send(f"You can't gift yourself {ctx.author}")
+
+        else:
+            if amount > account[str(ctx.author.id)]["wallet"] and amount > account[str(ctx.author.id)]["bank"]:
+                await ctx.send(f"Get more money to gift someone {ctx.author}")
+
+            else:
+                if account[str(ctx.author.id)]["wallet"] - amount >= 0:
+                    account[str(ctx.author.id)]["wallet"] -= amount
+                    account[str(user1.id)]["wallet"] += amount
+
+                else:
+                    account[str(ctx.author.id)]["bank"] -= amount
+                    account[str(user1.id)]["wallet"] += amount
+
+            with open("main_bank.json","r+") as f:
+                json.dump(account, f, indent = 4)
+                f.close()
+
+            await ctx.send(f"How generous of you {ctx.author}, I will save a spot for you in heaven.")
