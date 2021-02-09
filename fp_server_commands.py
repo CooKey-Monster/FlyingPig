@@ -223,7 +223,8 @@ class Commands:
         embed.add_field(name = "!beg", value = "Beg the majestic pig to give u some coins, goes directly to your wallet.", inline = False)
         embed.add_field(name = "!retrieve #amount", value = "Retrieve #amount from bank, to wallet.", inline = False)
         embed.add_field(name = "!depo #amount", value = "Deposits #amount into bank.", inline = False)  
-        embed.add_field(name = "!steal @user", value = "Steal money from @user", inline = False)       
+        embed.add_field(name = "!steal @user", value = "Steal money from @user", inline = False)
+        embed.add_field(name = "!gift #amount @user", value = "You give #amount coins to @user, money comes from your wallet/bank.", inline = False)               
         await ctx.send(embed = embed)
 
     @bot.command()
