@@ -54,8 +54,8 @@ class Economy:
         bank = account[str(ctx.author.id)]["bank"]
 
         # check if theirs money, if yes then do the transaction
-        if wallet == 0:
-            await ctx.send(f"Your poor {ctx.author.mention}, get some money to deposit you fool!")
+        if wallet < amount:
+            await ctx.send(f"Your don't have that much {ctx.author.mention}, get more money to deposit.")
 
         else:
             account[str(ctx.author.id)]["wallet"] -= int(amount)
