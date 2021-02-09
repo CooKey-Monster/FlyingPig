@@ -67,3 +67,17 @@ class Events:
         embed = discord.Embed(title = f"Good bye {member}", description = "Wish u had a good time :))", color = discord.Color.blue())
         embed.set_thumbnail(url = member.avatar_url)
         await chl.send(embed = embed)
+
+    @bot.event
+    async def on_command_error(ctx, error):
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send("**Invalid command. Try using** `help` **to figure out commands!**")
+
+        elif isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('**Please pass in all requirements.**')
+
+        elif isinstance(error, commands.MissingPermissions):
+            await ctx.send("**You dont have all the requirements or permissions for using this command :angry:**")
+
+        elif isinstance(error, commands.CommandOnCooldown):
+            await ctx.send(f"**{ctx.author.mention} Stop Begging You Moron. You can use this command 3 Times and the Cooldown Rate is 30 Seconds! Try again in {error.retry_after:.2f}s**")
