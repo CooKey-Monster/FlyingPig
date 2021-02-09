@@ -17,7 +17,7 @@ class Reddit:
         meme = subreddit.random()
         embed = discord.Embed(title = meme.title, color = discord.Color.orange())
         embed.set_image(url = meme.url)
-        embed.add_field(name = f"{meme.upvote}:thumbsup: {meme.downvote}:thumbsdown:", value = None, inline = False)
+        embed.add_field(name = f"{meme.upvote_ratio}:thumbsup:", value = None, inline = False)
         await ctx.send(embed = embed)
 
     @bot.command()
