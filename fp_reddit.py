@@ -18,7 +18,7 @@ class Reddit:
         meme_upvote_percentage = meme.upvote_ratio * 100
         embed = discord.Embed(title = meme.title, color = discord.Color.orange())
         embed.set_image(url = meme.url)
-        embed.add_field(name = f"{meme_upvote_percentage}% :arrow_up:", inline = False)
+        embed.add_field(name = f"{meme_upvote_percentage}% :arrow_up:", value = "" inline = False)
         await ctx.send(embed = embed)
 
     @bot.command()
