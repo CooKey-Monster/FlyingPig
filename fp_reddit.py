@@ -35,7 +35,7 @@ class Reddit:
     async def quote(ctx):
         subreddit = reddit.subreddit("quotes")
         quote = subreddit.random()
-        quote_upvote_percentage = funny.upvote_ratio * 100
+        quote_upvote_percentage = quote.upvote_ratio * 100
         embed = discord.Embed(title = quote.title, color = discord.Color.orange())
         embed.add_field(name = f"{quote_upvote_percentage}% :arrow_up:", value = "** **", inline = False)
         await ctx.send(embed = embed)
