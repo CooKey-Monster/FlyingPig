@@ -232,7 +232,7 @@ class Commands:
         embed = discord.Embed(title = "Help on math commands on FlyingPig.", description = "My math commands")
         embed.add_field(name = "!fplot function", value = "Plots function", inline = False)
         embed.add_field(name = "!plot xpoints ypoints", value = "Plots points at xpoints and ypoints(every xpoints and ypoints must be seperated with a comma, and all xpoints and ypoints most be surrounded by double quotes). The first xpoints matches the first ypoints.", inline = False)
-        embed.add_field(name = "!pemdas equation", value = "Finds answer to equation, syntax is the same as you would use on google.", inline = False)
+        embed.add_field(name = "!equation equation", value = "Finds answer to equation, syntax is the same as you would use on google.", inline = False)
         embed.add_field(name = "!log #number #base", value = "Finds log, by default, base 10, of #number.", inline = False)
         embed.add_field(name = "!ln #number", value = "Finds natural logarithm, base e, of #number", inline = False)
         embed.add_field(name = "!sin #number", value = "Finds sine value of #number(trigonometry)", inline = False)

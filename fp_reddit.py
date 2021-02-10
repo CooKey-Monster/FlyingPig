@@ -15,9 +15,10 @@ class Reddit:
     async def meme(ctx):
         subreddit = reddit.subreddit("memes")
         meme = subreddit.random()
+        meme_upvote_percentage = meme.upvote_ratio * 100
         embed = discord.Embed(title = meme.title, color = discord.Color.orange())
         embed.set_image(url = meme.url)
-        embed.add_field(name = f"{meme.upvote_ratio}:thumbsup:", value = None, inline = False)
+        embed.add_field(name = f"{meme_upvote_percentage}% :arrow_up:", inline = False)
         await ctx.send(embed = embed)
 
     @bot.command()
