@@ -230,6 +230,8 @@ class Commands:
     @bot.command()
     async def MathHelp(ctx):
         embed = discord.Embed(title = "Help on math commands on FlyingPig.", description = "My math commands")
+        embed.add_field(name = "!hex #hexadecimal", value = "Convert hexadecimal into decimal", inline = False)
+        embed.add_field(name = "!binary #binary", value = "Convert binary into decimal", inline = False)
         embed.add_field(name = "!fplot function", value = "Plots function", inline = False)
         embed.add_field(name = "!plot xpoints ypoints", value = "Plots points at xpoints and ypoints(every xpoints and ypoints must be seperated with a comma, and all xpoints and ypoints most be surrounded by double quotes). The first xpoints matches the first ypoints.", inline = False)
         embed.add_field(name = "!equation equation", value = "Finds answer to equation, syntax is the same as you would use on google.", inline = False)

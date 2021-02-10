@@ -10,6 +10,14 @@ from discord.ext.commands import has_permissions
 
 class Math:
     @bot.command()
+    async def binary(ctx, binary: int):
+        await ctx.send(int(binary, 2))
+
+    @bot.command()
+    async def hex(ctx, hexadecimal):
+        await ctx.send(int(hexadecimal, 16))
+
+    @bot.command()
     async def equation(ctx, expression):
         try:
             await ctx.send(calc(expression))
