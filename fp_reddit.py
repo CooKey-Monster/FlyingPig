@@ -25,13 +25,17 @@ class Reddit:
     async def funny(ctx):
         subreddit = reddit.subreddit("funny")
         funny = subreddit.random()
+        funny_upvote_percentage = funny.upvote_ratio * 100
         embed = discord.Embed(title = funny.title, color = discord.Color.orange())
         embed.set_image(url = funny.url)
+        embed.add_field(name = f"{funny_upvote_percentage}% :arrow_up:", value = "** **", inline = False)
         await ctx.send(embed = embed)
 
     @bot.command()
     async def quote(ctx):
         subreddit = reddit.subreddit("quotes")
         quote = subreddit.random()
+        quote_upvote_percentage = funny.upvote_ratio * 100
         embed = discord.Embed(title = quote.title, color = discord.Color.orange())
+        embed.add_field(name = f"{quote_upvote_percentage}% :arrow_up:", value = "** **", inline = False)
         await ctx.send(embed = embed)
