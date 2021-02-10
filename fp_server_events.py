@@ -13,9 +13,8 @@ class Events:
     @bot.event
     async def on_ready():
         global account
-        print("Pig is now up and flying")
 
-        game = discord.Game("Flying Pig version 2.5.3")
+        game = discord.Game("Flying Pig version 2.6.0")
         await bot.change_presence(status = discord.Status.online, activity = game)
 
         with open("main_bank.json","r+") as file:
@@ -37,6 +36,8 @@ class Events:
                 file.close()
                 
             await asyncio.sleep(36000)
+
+        print("Pig is now up and flying")
 
     @bot.event
     async def on_member_join(member):
