@@ -5,3 +5,4 @@ praw
 numpy
 matplotlib
 chromedriver_binary
+selenium
