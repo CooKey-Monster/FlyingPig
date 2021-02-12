@@ -1,7 +1,6 @@
 import json
 import asyncio
 import discord
-import requests
 from bot_settup import bot
 from discord.utils import get
 from discord.ext import commands
@@ -13,7 +12,7 @@ class Events:
     @bot.event
     async def on_ready():
         global account
-
+        print("Pig is now up and flying")
         game = discord.Game("Flying Pig version 2.6.0")
         await bot.change_presence(status = discord.Status.online, activity = game)
 
@@ -36,8 +35,6 @@ class Events:
                 file.close()
                 
             await asyncio.sleep(36000)
-
-        print("Pig is now up and flying")
 
     @bot.event
     async def on_member_join(member):
