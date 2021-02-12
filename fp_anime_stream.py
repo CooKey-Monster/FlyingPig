@@ -8,7 +8,7 @@ class Anime:
     @bot.command()
     async def test(ctx):
         global client
-        await ctx.send(client.search("naruto"))
+        await ctx.send("FLIP THIS WORLD")#client.search("naruto"))
     '''@bot.command()
     async def searchanime(ctx, anime):
         print("Started to get the client")
