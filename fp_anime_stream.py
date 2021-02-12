@@ -5,13 +5,16 @@ from Sakurajima import Sakurajima
 client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiRDdtZz09")
 
 def get_anime(anime: str):
-    client.search(anime)
+    return client.search(anime)
+
+aniime = get_anime("naruto")
 
 class Anime:
     @bot.command()
-    async def test(ctx, anime):
-        anime_list = get_anime(anime)
+    async def test(ctx):
+        global aniime
         await ctx.send("FLIP THIS WORLD")
+        await ctx.send(aniime)
     '''@bot.command()
     async def searchanime(ctx, anime):
         print("Started to get the client")
