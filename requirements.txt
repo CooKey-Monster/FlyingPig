@@ -1,7 +1,8 @@
-discord
-wikipedia
-asyncio
 praw
 numpy
+asyncio
+discord
+progress
+wikipedia
 matplotlib
 Sakurajima
