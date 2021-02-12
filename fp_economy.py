@@ -175,6 +175,9 @@ class Economy:
         elif str(user1.id) == str(ctx.author.id):
             await ctx.send(f"You can't gift yourself {ctx.author}")
 
+        elif amount < 0:
+            await ctx.send(f"You think I'm dumb huh {ctx.author.mention}!?")
+
         else:
             if amount > account[str(ctx.author.id)]["wallet"] and amount > account[str(ctx.author.id)]["bank"]:
                 await ctx.send(f"Get more money to gift someone {ctx.author}")

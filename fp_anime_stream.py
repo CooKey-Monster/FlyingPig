@@ -14,7 +14,7 @@ class Anime:
             await ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
 
     @bot.command()
-    async def playanime(ctx, anime, episode)
+    async def playanime(ctx, anime, episode):
         try:
             my_anime = client.search(anime)[0]
             all_episodes = my_anime.get_episodes()
