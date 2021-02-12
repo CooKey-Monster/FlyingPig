@@ -12,7 +12,6 @@ class Anime:
     async def test(ctx, anime):
         anime_list = get_anime(anime)
         await ctx.send("FLIP THIS WORLD")
-        await ctx.send(anime_list)
     '''@bot.command()
     async def searchanime(ctx, anime):
         print("Started to get the client")
