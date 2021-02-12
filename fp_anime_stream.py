@@ -6,11 +6,13 @@ client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiR
 
 class Anime:
     @bot.command()
-    async def searchanime(ctx, anime: str):
+    def searchanime(ctx, anime: str):
         print("Started to get the client")
+        
         global client
         if client.search(anime) == []:
             print(f"{anime} not found")
+
         else:
             print(client.search(anime))
 
