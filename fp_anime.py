@@ -9,4 +9,4 @@ class Anime:
 	async def anime(ctx, _anime: str, _ep: int):
 		anime_data["anime"] = _anime
 		anime_data["episode"] = _ep
-		await download_anime(anime_data)
+		download_anime(anime_data)
