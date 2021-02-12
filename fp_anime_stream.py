@@ -6,22 +6,15 @@ client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiR
 
 class Anime:
     @bot.command()
-    async def searchanime(ctx, anime):
+    async def searchanime(ctx, anime: str):
         print("Started to get the client")
         global client
-        print("got the client")
         if client.search(anime) == []:
-            print("I don't have results for this anime :(")
-            await ctx.send(f"{anime} isn't in my list, try spelling ")
-        
+            print(f"{anime} not found")
         else:
-            print("I have results for anime!")
-            await ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
+            print(client.search(anime))
 
-        print("command done!")
-
-
-    @bot.command()
+    '''@bot.command()
     async def playanime(ctx, anime, episode):
         global client
         try:
@@ -31,4 +24,4 @@ class Anime:
             episode.download("fullhd", "anime", "C:/Users/baili/OneDrive/Desktop/animes")
         
         except IndexError:
-            await ctx.send(f"I don't have episode {episode} of {anime}. Sorry :P")
+            await ctx.send(f"I don't have episode {episode} of {anime}. Sorry :P")'''
