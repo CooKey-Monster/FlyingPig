@@ -11,8 +11,7 @@ class Anime:
             await ctx.send(f"{anime} isn't in my list, try spelling ")
 
         else:
-            try:
-                await ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
+            await ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
 
     @bot.command()
     async def playanime(ctx, anime, episode)
