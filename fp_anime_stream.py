@@ -7,6 +7,7 @@ client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiR
 class Anime:
     @bot.command()
     async def searchanime(ctx, anime, episode):
+        global client
         if client.search(anime) == []:
             await ctx.send(f"{anime} isn't in my list, try spelling ")
 
@@ -15,6 +16,7 @@ class Anime:
 
     @bot.command()
     async def playanime(ctx, anime, episode):
+        global client
         try:
             my_anime = client.search(anime)[0]
             all_episodes = my_anime.get_episodes()
