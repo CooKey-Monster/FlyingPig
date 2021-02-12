@@ -7,12 +7,19 @@ client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiR
 class Anime:
     @bot.command()
     async def searchanime(ctx, anime):
+        print("Started to get the client")
         global client
+        print("got the client")
         if client.search(anime) == []:
+            print("I don't have results for this anime :(")
             await ctx.send(f"{anime} isn't in my list, try spelling ")
-
+        
         else:
+            print("I have results for anime!")
             await ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
+
+        print("command done!")
+
 
     @bot.command()
     async def playanime(ctx, anime, episode):
