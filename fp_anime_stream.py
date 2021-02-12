@@ -7,10 +7,10 @@ class Anime:
     def searchanime(ctx, anime: str):
         client = Sakurajima("ExplosiveDiarrheaPig", "927950", "Z3FsY2QvaFNSYUJXWHErcmhiRDdtZz09")
         if client.search(anime) == []:
-            ctx.send(f"{anime} isn't in my list, try spelling ")
+            bot.loop.create_task(ctx.send(f"{anime} isn't in my list, try spelling it with fewer words"))
 
         else:
-            ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}")
+            bot.loop.create_task(ctx.send(f"Here are the results for {anime}:\n{client.search(anime)}"))
 
     @bot.command()
     def playanime(ctx, anime, episode):
@@ -22,4 +22,4 @@ class Anime:
             episode.download("fullhd", "anime", "C:/Users/baili/OneDrive/Desktop/animes")
         
         except IndexError:
-            ctx.send(f"I don't have episode {episode} of {anime}. Sorry :P")
+            bot.loop.create_task(ctx.send(f"I don't have episode {episode} of {anime}. Sorry :P"))
