@@ -10,7 +10,8 @@ from discord.ext.commands import has_permissions
 class Commands:
     @bot.command()
     async def spam(ctx, content, number):
-        ctx.purge()
+        await ctx.channel.purge(limit = 1)
+        
         for i in range(int(number)):
             await ctx.send(content)
 
