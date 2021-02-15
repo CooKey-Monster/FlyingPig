@@ -6,10 +6,8 @@ from bot_settup import bot
 from discord.utils import get
 from discord.ext import commands
 from discord.ext.commands import has_permissions
-
+bot.remove_command("help")
 class Commands:
-    bot.remove_command("help")
-
     @bot.command()
     async def spam(ctx, content, number):
         await ctx.channel.purge(limit = 1)
@@ -259,3 +257,4 @@ class Commands:
         embed.add_field(name = "!tickle @user", value = "Use .tickle @user", inline = False)
         embed.add_field(name = "!slap @user", value = "Use .slap @user", inline = False)
         embed.add_field(name = "!dance", value = "Use .dance",inline = False)
+        await ctx.send(embed = embed)
