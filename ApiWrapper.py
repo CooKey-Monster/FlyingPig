@@ -34,8 +34,8 @@ class Wrapper:
 		return download_link
 
 wrapper = Wrapper()
-wrapper.get_downloads("My hero academia")
-
+results = wrapper.search_anime("My hero academia")
+print(results)
 
 	# def anime_recommendation(self):
 	# 	output=[]
