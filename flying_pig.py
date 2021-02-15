@@ -1,3 +1,4 @@
+from fp_action import Action
 from fp_math import Math
 from bot_settup import bot
 from fp_games import Games
@@ -7,6 +8,7 @@ from fp_server_events import Events
 from fp_server_commands import Commands
 
 if __name__ == '__main__':
+	action = Action()
     meme = Reddit()
     math = Math()
     games = Games()
