@@ -8,7 +8,7 @@ from fp_server_events import Events
 from fp_server_commands import Commands
 
 if __name__ == '__main__':
-	action = Action()
+    action = Action()
     meme = Reddit()
     math = Math()
     games = Games()
