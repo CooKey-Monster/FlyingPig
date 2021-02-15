@@ -74,11 +74,3 @@ class Action:
        embed.set_image(url=gif)
        embed.set_footer(text="UwU",icon_url=ctx.author.avatar_url)
        await ctx.send(embed=embed)
-
-    @bot.command()
-    async def help(ctx):
-       embed=discord.Embed(title="Help Page",description="Welcome To The Help Page!",color=discord.Color.blue())
-       embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/750677889791426701/13f2759bd9314f842558dc4ca011f169.png?size=4096")
-       embed.add_field(name="Please Check The Modules Page For All Features",value="Use .modules For The Modules Page!",inline=False)
-       embed.add_field(name="If You Want To Support Us Or Want To Help Or Want To Report Any Bugs.",value="Join https://discord.gg/MrryfPT",inline=False)
-       await ctx.send(embed=embed)

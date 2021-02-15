@@ -4,18 +4,18 @@ from bs4 import BeautifulSoup
 
 class Wrapper:
 	def __init__(self):
-		self.search_url="https://www.animeout.xyz/?s={}"
-		self.headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36"}
+		self.search_url = "https://www.animeout.xyz/?s={}"
+		self.headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36"}
 
-	def search_anime(self,anime_name):
-		output=[]
-		response=BeautifulSoup(requests.get(self.search_url.format(anime_name),headers=self.headers).content,"html.parser")
-		anime_results=response.find_all("h3",class_="post-title entry-title")
-		thumbnails=response.find_all("div",class_="post-image")
+	def search_anime(self, anime_name):
+		output = {}
+		response = BeautifulSoup(requests.get(self.search_url.format(anime_name), headers = self.headers).content, "html.parser")
+		anime_results = response.find_all("h3", class_ = "post-title entry-title")
+		thumbnails = response.find_all("div", class_ = "post-image")
 		for titles in anime_results:
-			source_url=[titles.find("a")["href"]]
+			source_url = [titles.find("a")["href"]]
 			for source in source_url:
-				output.append([titles.find("a").contents[0],source])
+				output[titles.find("a").contents[0]] = source
 		return output
 
 	def get_downloads(self,source):
@@ -31,11 +31,16 @@ class Wrapper:
 						download_link.append(url)
 				except:
 					pass
+					
 		return download_link
 
-wrapper = Wrapper()
+api = Wrapper()
+download = api.get_downloads("demon slayer")
+for i in download:
+    print(i)
+'''wrapper = Wrapper()
 results = wrapper.search_anime("My hero academia")
-print(results)
+print(results)'''
 
 	# def anime_recommendation(self):
 	# 	output=[]

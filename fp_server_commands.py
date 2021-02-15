@@ -9,7 +9,7 @@ from discord.ext.commands import has_permissions
 
 class Commands:
     bot.remove_command("help")
-    
+
     @bot.command()
     async def spam(ctx, content, number):
         await ctx.channel.purge(limit = 1)
@@ -204,6 +204,7 @@ class Commands:
         embed.add_field(name = "!GameHelp", value = "Shows games.", inline = False)
         embed.add_field(name = "!MoneyHelp", value = "Shows economy commands.", inline = False)
         embed.add_field(name = "!MathHelp", value = "Shows math commands.", inline = False)
+        embed.add_field(name = "!ActionHelp", value = "Shows actions.", inline = False)
         await ctx.send(embed = embed)
 
     @bot.command()
@@ -246,3 +247,15 @@ class Commands:
         embed.add_field(name = "!tan #number", value = "Finds tangent value of #number(trigonometry)", inline = False)        
         embed.add_field(name = "!heron #side1 #side2 #side3", value = "Finds area of a triangle with sides: #side1 #side2 #side3. If it's 0, then such triangles does not exist.", inline = False)
         await ctx.send(embed = embed)
+
+    @bot.command()
+    async def ActionHelp(ctx):
+        embed = discord.Embed(title = "Help on action commands on FlyingPig.", description = "My actions")
+        embed.add_field(name = "!gif object", value = "Search object in gif", inline = False)
+        embed.add_field(name = "!hug @user", value = "Use .hug @user", inline = False)
+        embed.add_field(name = "!kiss @user", value = "Use .kiss @user", inline = False)
+        embed.add_field(name = "!cuddle @user", value = "Use .cuddle @user", inline = False)
+        embed.add_field(name = "!blush @user", value = "Use .blush", inline = False)
+        embed.add_field(name = "!tickle @user", value = "Use .tickle @user", inline = False)
+        embed.add_field(name = "!slap @user", value = "Use .slap @user", inline = False)
+        embed.add_field(name = "!dance", value = "Use .dance",inline = False)
