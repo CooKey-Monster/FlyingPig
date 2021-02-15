@@ -8,6 +8,8 @@ from discord.ext import commands
 from discord.ext.commands import has_permissions
 
 class Commands:
+    bot.remove_command("help")
+    
     @bot.command()
     async def spam(ctx, content, number):
         await ctx.channel.purge(limit = 1)
