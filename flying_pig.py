@@ -1,6 +1,5 @@
 from fp_math import Math
 from bot_settup import bot
-from fp_anime import Anime
 from fp_games import Games
 from fp_reddit import Reddit
 from fp_economy import Economy
@@ -8,7 +7,6 @@ from fp_server_events import Events
 from fp_server_commands import Commands
 
 if __name__ == '__main__':
-    anime = Anime()
     meme = Reddit()
     math = Math()
     games = Games()
