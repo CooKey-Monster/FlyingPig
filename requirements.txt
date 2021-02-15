@@ -1,8 +1,8 @@
 praw
 numpy
+tenorpy
 asyncio
 discord
 progress
 wikipedia
 matplotlib
-Sakurajima
