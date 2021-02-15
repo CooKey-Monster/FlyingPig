@@ -15,4 +15,5 @@ if __name__ == '__main__':
     economy = Economy()
     events = Events()
     commands = Commands()
+    bot.remove_command("help")
     bot.run("Nzk5Njc4NzY4MDY2NTkyNzk5.YAHE4w.lxNn94msroC3l4PjiNbRydp5j00")
