@@ -6,7 +6,8 @@ from bot_settup import bot
 from discord.utils import get
 from discord.ext import commands
 from discord.ext.commands import has_permissions
-bot.remove_command("help")
+
+
 class Commands:
     @bot.command()
     async def spam(ctx, content, number):
