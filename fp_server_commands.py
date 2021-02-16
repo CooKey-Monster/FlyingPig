@@ -7,7 +7,6 @@ from discord.utils import get
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 
-
 class Commands:
     @bot.command()
     async def spam(ctx, content, number):
@@ -186,9 +185,9 @@ class Commands:
         await ctx.send(embed = embed)
 
     @bot.command()
-    async def help(ctx):
+    async def Help(ctx):
         embed = discord.Embed(title = "Help on FlyingPig.", description = "My commands")
-        embed.add_field(name = "!help", value = "Shows this.", inline = False)
+        embed.add_field(name = "!Help", value = "Shows this.", inline = False)
         embed.add_field(name = "!report @user **some reason**", value = "Report user for reason", inline = False)
         embed.add_field(name = "!invite", value = "Invite link for FLyingPig.", inline = False)
         embed.add_field(name = "!mute @user", value = "Mute user.", inline = False)
