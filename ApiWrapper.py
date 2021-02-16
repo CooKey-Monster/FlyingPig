@@ -31,16 +31,8 @@ class Wrapper:
 						download_link.append(url)
 				except:
 					pass
-					
-		return download_link
 
-api = Wrapper()
-download = api.get_downloads("demon slayer")
-for i in download:
-    print(i)
-'''wrapper = Wrapper()
-results = wrapper.search_anime("My hero academia")
-print(results)'''
+		return download_link
 
 	# def anime_recommendation(self):
 	# 	output=[]
