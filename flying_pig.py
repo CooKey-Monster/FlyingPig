@@ -10,7 +10,7 @@ from fp_server_commands import Commands
 
 if __name__ == '__main__':
     math = Math()
-	anime = Anime()
+    anime = Anime()
     meme = Reddit()
     games = Games()
     events = Events()
