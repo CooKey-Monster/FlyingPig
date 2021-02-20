@@ -166,7 +166,7 @@ class Commands:
     async def report(ctx, user:discord.Member, *, info):
         embed1 = discord.Embed(title = f"{ctx.author.display_name} Just Reported {user}", description = f"Reason : {info}", color = discord.Color.red())
         embed2 = discord.Embed(title = f"You have been reported by {ctx.author.display_name}", description = f"Reason : {info}", color = discord.Color.red())
-        await user.send(embed2)
+        await user.send(embed = embed2)
         await ctx.message.delete()
         await ctx.send(f"**{ctx.author.mention} Thank You For Reporting. Any Online Staff/Mods/Admin Will Check That And Take Actions! Thank You.**")
         for channel in ctx.guild.channels:
@@ -184,7 +184,7 @@ class Commands:
         embed = discord.Embed(title = "Invite Link", description = "You can invite me to your server by just clicking on the link.", color = discord.Color.purple())
         embed.add_field(name = "Link", value = link, inline = False)
         embed.set_thumbnail(url = "https://cdn.discordapp.com/avatars/799678768066592799/6d72d4bc4fdd9f21935769c2fd7a0d46.png?size=4096")
-        await bot.send_message(ctx.message.user, embed)
+        await ctx.message.author.send(embed = embed)
 
     @bot.command()
     async def Help(ctx):
