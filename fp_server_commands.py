@@ -165,7 +165,7 @@ class Commands:
     @bot.command()
     async def report(ctx, user:discord.Member, *, info):
         embed = discord.Embed(title = f"{ctx.author.display_name} Just Reported {user}", description = f"Reason : {info}", color = discord.Color.red())
-        await user.dm_channel.send(embed)
+        await ctx.author.dm_channel.send(embed)
         await ctx.message.delete()
         await ctx.send(f"**{ctx.author.mention} Thank You For Reporting. Any Online Staff/Mods/Admin Will Check That And Take Actions! Thank You.**")
         for channel in ctx.guild.channels:
