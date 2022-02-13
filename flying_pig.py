@@ -17,4 +17,4 @@ if __name__ == '__main__':
     action = Action()
     economy = Economy()
     commands = Commands()
-    bot.run("Nzk5Njc4NzY4MDY2NTkyNzk5.YAHE4w.lxNn94msroC3l4PjiNbRydp5j00")
+    bot.run("Your key")
