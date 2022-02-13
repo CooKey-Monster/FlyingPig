@@ -1,2 +1,2 @@
 # FlyingPig
-it's my bot
+discord bot
